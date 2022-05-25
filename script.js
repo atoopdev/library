@@ -8,14 +8,15 @@ async function getLibrary(){
         throw new Error(message)
     }
     library = await response.json()
-    return library
-}
-
-getLibrary().then(library=>{
     // add an id number for each entry
     library.forEach((item,index) =>{
         item.id = index + 1;
     })
+
+    return library
+}
+
+getLibrary().then(library=>{
     console.log(library)
     document.getElementById("container").innerHTML = `${library.map(getBookHTML).join('')}`
 
