@@ -24,7 +24,10 @@ p {
 .container {
   max-width: 600px;
   margin: 0 auto;
-  /* border: 1px solid black; */
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
 
  
 }
@@ -36,7 +39,7 @@ p {
   grid-template-areas:
   "spine cover"
   "footer footer";
-  
+  margin: 0.2rem;
 }
 
 .title{
@@ -49,10 +52,18 @@ p {
   border: 1px solid black;
 }
 
+.book:nth-of-type(even) .title{
+  background-color: lightblue;
+}
+
 .spine{
   grid-area: spine;
   background-color: #4A4238;
   border-top-left-radius: 0.3rem;
+}
+
+.book:nth-of-type(even) .spine{
+  background-color: #E1B07E;
 }
 
 .footer{
