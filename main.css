@@ -24,12 +24,40 @@ p {
 .container {
   max-width: 600px;
   margin: 0 auto;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 
-  display: grid;
+ 
 }
 
 .book {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1rem 8rem;
+
+  grid-template-areas:
+  "spine cover"
+  "footer footer";
+  
+}
+
+.title{
+  grid-area: cover;
+  height: 7rem;
+  background-color: lightgreen;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.3rem;
+  border: 1px solid black;
+}
+
+.spine{
+  grid-area: spine;
+  background-color: #4A4238;
+  border-top-left-radius: 0.3rem;
+}
+
+.footer{
+  grid-area: footer;
+  padding:0.2rem;
+  background-color: lightgrey;
+  border-bottom-left-radius: 0.3rem;
 }

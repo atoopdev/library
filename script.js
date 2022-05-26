@@ -25,7 +25,8 @@ getLibrary().then(library=>{
 function getBookHTML(book){
     return `
     <div class="book">
-    <div class="author">${book.author}</div>
     <div class="title">${book.title}</div>
+    <div class="spine"></div>
+    <div class="footer"></div>
     </div>`
 }
